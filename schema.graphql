@@ -1,0 +1,28 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type ChatMessage {
+   id: Int!
+   author: String!
+   content: String!
+   timestamp: String!
+}
+
+type Account {
+  id: String!
+  username: String!
+}
+
+type Query {
+  account: Account!
+  messages: [ChatMessage!]!
+}
+
+type Mutation {
+  sendMessage(content: String!): ChatMessage!
+}
+
+type Subscription {
+  messageReceived: ChatMessage!
+}
